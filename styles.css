@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #ececec;
+}
+
+.toggle-btn {
+    float: left;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 15px 20px;
+}
+
+.sidenav {
+    height: calc(100vh - 92px);
+    max-height: calc(100vh - 92px);
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 92px;
+    left: 0;
+    background: #D7C49EFF;
+    overflow-y: auto;
+    transition: width 0.5s;
+    padding-top: 0px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07);
+    transition: width 0.5s, margin-left 0.5s;
+}
+
+.sidenav a {
+    padding: 20px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #343148FF;
+    font-weight: 400;
+    display: block;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07);
+}
+
+.dropdown-menu-start a.active,
+.dropdown-menu-start a:focus,
+.dropdown-menu-start a:hover {
+    color: rgb(255, 255, 255);
+    background-color: #D7C49EFF;
+    border-color: rgb(255, 255, 255);
+    transition: width 0.5s, margin-left 0.5s;
+}
+
+.topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.content-wrapper {
+    overflow-y: auto;
+}
+
+.music-player-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.music-player {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.music-info {
+    margin-bottom: 20px;
+}
+
+.player-control button {
+    margin: 0 5px;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #343148FF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.player-control button:hover {
+    background-color: #1E1E30FF;
+}
+
+.playlist {
+    margin-top: 20px;
+}
+
+.playlist ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.playlist li {
+    margin-bottom: 10px;
+}
+
+.playlist a {
+    color: #343148FF;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.playlist a.active,
+.playlist a:hover {
+    background-color: #343148FF;
+    color: #fff;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom right, #D7C49EFF, #343148FF);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
