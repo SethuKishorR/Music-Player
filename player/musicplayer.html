@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="topnav navbar p-3 shadow-lg" style="background-color: #D7C49EFF; border: none;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-weight: 700;color:#343148FF;">
+                <i class="music-icon fas fa-music"></i>
+                PlayMusic
+            </a>
+            <button class="toggle-btn" onclick="toggleNav()" style="color:#343148FF;"><i
+                    class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" style="background-color: red; color: white;"
+            onclick="toggleNav()">Close</a>
+        <div class="dropdown dropdown-container shadow">
+            <button class="btn btn-secondary dropdown-toggle w-100 shadow-sm py-4 dropdown-btn" type="button"
+                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
+                style="border-radius: 0px;border: none; text-align: left;background-color: #343148FF; margin-top: 1px;">
+                Playlist 1
+            </button>
+            <div class="dropdown-menu-start w-100 shadow dropdown-container" aria-labelledby="dropdownMenuButton1"
+                style="border-radius: 0px;border: none; display: none;background-color: rgb(255, 255, 255);padding: 0px;">
+                <div class="container" style="padding:0px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li><a href="#" onclick="playSong('songs/music1.mp3', this)" class="active">Song 1</a>
+                                </li>
+                                <li><a href="#" onclick="playSong('songs/music2.mp3', this)">Song 2</a></li>
+                                <li><a href="#" onclick="playSong('songs/music3.mp3', this)">Song 3</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown dropdown-container shadow">
+            <button class="btn btn-secondary dropdown-toggle w-100 shadow-sm py-4 dropdown-btn" type="button"
+                id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"
+                style="border-radius: 0px;border: none; text-align: left;background-color: #343148FF; margin-top: 1px;">
+                Playlist 2
+            </button>
+            <div class="dropdown-menu-start w-100 shadow dropdown-container" aria-labelledby="dropdownMenuButton2"
+                style="border-radius: 0px;border: none; display: none;background-color: rgb(255, 255, 255);padding: 0px;">
+                <div class="container" style="padding:0px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li><a href="#" onclick="playSong('songs/music4.mp3', this)">Song 4</a></li>
+                                <li><a href="#" onclick="playSong('songs/music5.mp3', this)">Song 5</a></li>
+                                <li><a href="#" onclick="playSong('songs/music6.mp3', this)">Song 6</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown dropdown-container shadow">
+            <button class="btn btn-secondary dropdown-toggle w-100 shadow-sm py-4 dropdown-btn" type="button"
+                id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false"
+                style="border-radius: 0px;border: none; text-align: left;background-color: #343148FF; margin-top: 1px;">
+                Playlist 3
+            </button>
+            <div class="dropdown-menu-start w-100 shadow dropdown-container" aria-labelledby="dropdownMenuButton3"
+                style="border-radius: 0px;border: none; display: none;background-color: rgb(255, 255, 255);padding: 0px;">
+                <div class="container" style="padding:0px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li><a href="#" onclick="playSong('songs/music7.mp3', this)">Song 7</a></li>
+                                <li><a href="#" onclick="playSong('songs/music8.mp3', this)">Song 8</a></li>
+                                <li><a href="#" onclick="playSong('songs/music9.mp3', this)">Song 9</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown dropdown-container shadow">
+            <button class="btn btn-secondary dropdown-toggle w-100 shadow-sm py-4 dropdown-btn" type="button"
+                id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false"
+                style="border-radius: 0px;border: none; text-align: left;background-color: #343148FF; margin-top: 1px;">
+                Playlist 4
+            </button>
+            <div class="dropdown-menu-start w-100 shadow dropdown-container" aria-labelledby="dropdownMenuButton4"
+                style="border-radius: 0px;border: none; display: none;background-color: rgb(255, 255, 255);padding: 0px;">
+                <div class="container" style="padding:0px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li><a href="#" onclick="playSong('songs/music10.mp3', this)">Song 10</a></li>
+                                <li><a href="#" onclick="playSong('songs/music11.mp3', this)">Song 11</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Music Player Section with Background Animation -->
+    <div class="music-player-container">
+        <div class="background-animation"></div>
+        <div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+            <section class="music-player">
+                <audio id="audio-player" controls class="mb-4">
+                    <source src="songs/music1.mp3" type="audio/mpeg">
+                    <source src="songs/music2.mp3" type="audio/mpeg">
+                    <source src="songs/music3.mp3" type="audio/mpeg">
+                    <source src="songs/music4.mp3" type="audio/mpeg">
+                    <source src="songs/music5.mp3" type="audio/mpeg">
+                    <source src="songs/music6.mp3" type="audio/mpeg">
+                    <source src="songs/music7.mp3" type="audio/mpeg">
+                    <source src="songs/music8.mp3" type="audio/mpeg">
+                    <source src="songs/music9.mp3" type="audio/mpeg">
+                    <source src="songs/music10.mp3" type="audio/mpeg">
+                    <source src="songs/music11.mp3" type="audio/mpeg">
+                </audio>
+                <section class="music-info">
+                    <p style="color: white;" id="current-song">Song 1</p>
+                    <!-- Additional song details can be added dynamically -->
+                </section>
+                <div class="player-control player-controls">
+                    <button id="play-button">Play</button>
+                    <button id="pause-button">Pause</button>
+                    <button id="fullscreen-button"><i class="fas fa-expand"></i></button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function toggleNav() {
+            const sidenav = document.getElementById('mySidenav');
+            sidenav.style.left = sidenav.style.left === '0px' ? '-250px' : '0px';
+        }
+
+        function playSong(src, element) {
+            const audioPlayer = document.getElementById('audio-player');
+            audioPlayer.src = src;
+            audioPlayer.play();
+
+            const playlistLinks = document.querySelectorAll('.sidenav a');
+            playlistLinks.forEach(link => link.classList.remove('active'));
+            element.classList.add('active');
+
+            const currentSongElement = document.getElementById('current-song');
+            currentSongElement.textContent = element.textContent;
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="styles.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
